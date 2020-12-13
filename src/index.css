@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -12,10 +14,20 @@ code {
     monospace;
 }
 
+h1 {
+  font-family: Caveat;
+  font-size: 3em;
+  color: #7b2d88;
+}
+
 .modal-bg {
   width: 100vw;
   height: 100vh;
   background-color: #7449948f;
+  background-image: url("./cat-lollipop.png");
+  background-repeat: no-repeat;
+  background-size: 200px;
+  background-position: right bottom;
 }
 
 .modal {
@@ -53,4 +65,21 @@ input[type="text"] {
   padding: 5px;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 30px auto;
+  background-color: #7449948f;
+}
 
+li {
+  padding: 15px 0;
+}
+
+li:nth-of-type(2n) {
+  background-color: #fff;
+}
+
+.username {
+  font-style: italic;
+}

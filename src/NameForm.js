@@ -12,10 +12,14 @@ function NameForm({ setName }) {
 
   return (
     <div className="modal-bg">
-      <form onSubmit={handleSubmit} className="modal">
+      <div className="modal">
+        <h1>ChatterMeow</h1>
+
+      <form onSubmit={handleSubmit}>
         <input type="text" value={input} onChange={handleChange} placeholder="Your name, your highness" />
         <input type="submit" value="Enter" />
       </form>
+      </div>
     </div>
   )
 }

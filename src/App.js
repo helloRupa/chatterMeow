@@ -10,6 +10,7 @@ function App() {
   return (
     <div className="App">
       { name === "" ? <NameForm setName={setName} /> : null}
+      <h1>Hi {name}</h1>
       <Messages />
       <ChatForm name={name} />
     </div>
