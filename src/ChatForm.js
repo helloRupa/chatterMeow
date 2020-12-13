@@ -13,7 +13,7 @@ function ChatForm({ name }) {
 
   return (
     <form onSubmit={handleSubmit} className="chat">
-      <input type="text" placeholder="Say something" onChange={handleChange} />
+      <input type="text" placeholder="Tell Me Sweet Little Meows" onChange={handleChange} />
       <input type="submit" value="Send It Meow" />
     </form>
   )

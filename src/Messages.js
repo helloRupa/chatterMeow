@@ -1,52 +1,9 @@
 import Message from './Message';
 
-const messages = [
-  {
-    msg: "message",
-    username: "john",
-    created_at: "Some Date and time"
-  },
-  {
-    msg: "message",
-    username: "john",
-    created_at: "Some Date and time"
-  },
-  {
-    msg: "message",
-    username: "john",
-    created_at: "Some Date and time"
-  },
-  {
-    msg: "message",
-    username: "john",
-    created_at: "Some Date and time"
-  },
-  {
-    msg: "message",
-    username: "john",
-    created_at: "Some Date and time"
-  },
-  {
-    msg: "message",
-    username: "john",
-    created_at: "Some Date and time"
-  },
-  {
-    msg: "message",
-    username: "john",
-    created_at: "Some Date and time"
-  },
-  {
-    msg: "message",
-    username: "john",
-    created_at: "Some Date and time"
-  }
-]
-
-function Messages() {
+function Messages({ messages }) {
   return (
     <ul>
-      { messages.map((msg) => <Message msg={msg} />) }
+      { messages.map((msg) => <Message msg={msg} key={msg.id} />) }
     </ul>
   )
 }

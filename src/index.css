@@ -23,11 +23,13 @@ h1 {
 .modal-bg {
   width: 100vw;
   height: 100vh;
-  background-color: #7449948f;
+  background-color: #b299c4;
   background-image: url("./cat-lollipop.png");
   background-repeat: no-repeat;
   background-size: 200px;
   background-position: right bottom;
+  z-index: 1;
+  position: relative;
 }
 
 .modal {
@@ -43,6 +45,7 @@ h1 {
   right: 0;
   padding: 30px;
   transform: translateY(-50px);
+  z-index: 2;
 }
 
 input[type="submit"] {
@@ -70,6 +73,7 @@ ul {
   padding: 0;
   margin: 30px auto;
   background-color: #7449948f;
+  padding-bottom: 70px;
 }
 
 li {
@@ -90,6 +94,7 @@ form.chat {
   width: 100%;
   margin: 0;
   padding: 0;
+  background-color: #ffffffbd;
 }
 
 .chat input[type="text"] {
@@ -102,4 +107,11 @@ form.chat {
 .chat input[type="submit"] {
   width: 20%;
   display: inline-block;
+}
+
+.tiny-text {
+  font-size: 0.85em;
+  display: block;
+  margin-top: 10px;
+  font-style: italic;
 }
