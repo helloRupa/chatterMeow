@@ -23,12 +23,19 @@ function NameForm({ setName }) {
       <div className="modal">
         <h1>ChatterMeow</h1>
 
-      <form onSubmit={handleSubmit}>
-        <input type="text" value={input} onChange={handleChange} placeholder="Your name, your highness" />
-        <input type="submit" value="Enter" />
-      </form>
+        <form onSubmit={handleSubmit}>
+          <input type="text" 
+            value={input} 
+            onChange={handleChange} 
+            placeholder="Your name, your highness"
+            minLength={1}
+            maxLength={30} />
+          <input type="submit" value="Enter" />
+        </form>
 
-      <span className="tiny-text">Not a responsive app, just a quick experiement.</span>
+        <span className="tiny-text">
+          Not a responsive app, just a quick experiement.
+        </span>
       </div>
     </div>
   )

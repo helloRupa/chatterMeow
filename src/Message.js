@@ -7,7 +7,9 @@ function Message({ msg }) {
 
   return (
     <li>
-      <span className="username">{msg.username}</span> meowed: "{msg.msg}" on {formatDateTime()}
+      <span className="username">
+        {msg.username}
+      </span> meowed: "{msg.msg}" on {formatDateTime()}
     </li>
   )
 }

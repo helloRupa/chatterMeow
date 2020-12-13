@@ -20,7 +20,12 @@ function ChatForm({ name, socket }) {
 
   return (
     <form onSubmit={handleSubmit} className="chat">
-      <input type="text" value={message} placeholder="Tell Me Sweet Little Meows" onChange={handleChange} />
+      <input type="text" 
+        value={message} 
+        placeholder="Tell Me Sweet Little Meows" 
+        onChange={handleChange}
+        maxLength={30}
+        minLength={1} />
       <input type="submit" value="Send It Meow" />
     </form>
   )
