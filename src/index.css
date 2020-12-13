@@ -11,3 +11,46 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.modal-bg {
+  width: 100vw;
+  height: 100vh;
+  background-color: #7449948f;
+}
+
+.modal {
+  width: 500px;
+  height: 250px;
+  background-color: #fff;
+  border-radius: 15px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 30px;
+  transform: translateY(-50px);
+}
+
+input[type="submit"] {
+  display: block;
+  margin: auto;
+  font-size: 1.25em;
+  width: 50%;
+  padding: 10px;
+  background-color: #6e1280;
+  color: #fff;
+  border: none;
+}
+
+input[type="text"] {
+  display: block;
+  margin: 30px auto;
+  width: 85%;
+  text-align: center;
+  font-size: 1.25em;
+  padding: 5px;
+}
+
+
