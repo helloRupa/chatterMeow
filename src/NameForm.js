@@ -7,7 +7,7 @@ function NameForm({ setName }) {
     setTimeout(() => {
       window.scrollTo(0, 0);
       document.body.style.overflow = "hidden";
-    }, 30);
+    }, 50);
   }, []);
 
   const handleChange = (e) => setInput(e.target.value);
