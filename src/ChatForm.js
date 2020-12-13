@@ -12,9 +12,9 @@ function ChatForm({ name }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="chat">
       <input type="text" placeholder="Say something" onChange={handleChange} />
-      <input type="submit" value="Chat Your Meow" />
+      <input type="submit" value="Send It Meow" />
     </form>
   )
 }

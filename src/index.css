@@ -83,3 +83,23 @@ li:nth-of-type(2n) {
 .username {
   font-style: italic;
 }
+
+form.chat {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.chat input[type="text"] {
+  width: 60%;
+  display: inline-block;
+  height: 29px;
+  margin-right: 15px;
+}
+
+.chat input[type="submit"] {
+  width: 20%;
+  display: inline-block;
+}
