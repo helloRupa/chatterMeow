@@ -6,7 +6,7 @@ import Messages from './Messages';
 import ChatForm from './ChatForm';
 
 const socketEndpoint = "http://localhost:8000";
-const fetchEndpoint = "http://localhost:8000/messages";
+const fetchEndpoint = `${socketEndpoint}/messages`;
 const socket = socketIOClient(socketEndpoint);
 
 function App() {
