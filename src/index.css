@@ -7,6 +7,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #dfd2e9;
+  color: #352638;
+  background-image: url("./cat-lollipop.png");
+  background-repeat: no-repeat;
+  background-size: 225px;
+  background-position: 102% 77%;
+    background-attachment: fixed;
 }
 
 code {
@@ -72,20 +79,35 @@ ul {
   list-style: none;
   padding: 0;
   margin: 30px auto;
-  background-color: #7449948f;
   padding-bottom: 70px;
+  width: 450px;
 }
 
 li {
-  padding: 15px 0;
-}
-
-li:nth-of-type(2n) {
+  padding: 15px;
+  border-radius: 15px;
+  margin: 15px 0;
   background-color: #fff;
+  position: relative;
 }
 
 .username {
   font-style: italic;
+  display: block;
+  text-align: left;
+}
+
+.message {
+  font-size: 1.25em;
+  padding: 10px 0;
+  display: block;
+}
+
+.date {
+  display: block;
+  text-align: right;
+  font-size: 0.85em;
+  color: #6f6f6f;
 }
 
 form.chat {
@@ -94,7 +116,8 @@ form.chat {
   width: 100%;
   margin: 0;
   padding: 0;
-  background-color: #ffffffbd;
+  background-color: #fff;
+  border-top: 1px solid #7449948f;
 }
 
 .chat input[type="text"] {

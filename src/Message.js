@@ -8,8 +8,14 @@ function Message({ msg }) {
   return (
     <li>
       <span className="username">
-        {msg.username}
-      </span> meowed: "{msg.msg}" on {formatDateTime()}
+        {msg.username} meowed:
+      </span> 
+      <span className="message">
+        {msg.msg}
+      </span> 
+      <span className="date">
+        at {formatDateTime()}
+      </span>
     </li>
   )
 }
