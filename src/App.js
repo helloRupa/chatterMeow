@@ -5,7 +5,7 @@ import NameForm from './NameForm';
 import Messages from './Messages';
 import ChatForm from './ChatForm';
 
-const socketEndpoint = "http://localhost:8000";
+const socketEndpoint = "https://chattermeow.herokuapp.com";
 const fetchEndpoint = `${socketEndpoint}/messages`;
 const socket = socketIOClient(socketEndpoint);
 
