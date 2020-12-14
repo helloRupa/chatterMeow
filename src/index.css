@@ -141,6 +141,10 @@ form.chat {
   font-style: italic;
 }
 
+.loading {
+  font-size: 2em;
+}
+
 @media all and (min-width: 630px) and (max-width: 700px) {
   .chat input[type="text"], .chat input[type="submit"] {
     font-size: 1.1em;

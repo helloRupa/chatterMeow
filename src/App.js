@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 import socketIOClient from "socket.io-client";
 import './App.css';
 import NameForm from './NameForm';
-import Messages from './Messages';
-import ChatForm from './ChatForm';
+import Chat from './Chat';
+import Loading from './Loading';
 
 const socketEndpoint = "https://chattermeow.herokuapp.com";
 const fetchEndpoint = `${socketEndpoint}/messages`;
@@ -12,11 +12,15 @@ const socket = socketIOClient(socketEndpoint);
 function App() {
   const [name, setName] = useState("");
   const [messages, setMessages] = useState([]);
+  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
     fetch(fetchEndpoint)
     .then(res => res.json())
-    .then(setMessages)
+    .then((msgs) => {
+      setMessages(msgs);
+      setIsReady(true);
+    })
     .catch(console.log);
   }, []);
 
@@ -39,9 +43,8 @@ function App() {
   return (
     <div className="App">
       { name === "" ? <NameForm setName={setName} /> : null}
-      <h1>Hi {name}</h1>
-      <Messages messages={messages} />
-      <ChatForm name={name} socket={socket} />
+      { isReady ?
+        <Chat name={name} socket={socket} messages={messages} /> : <Loading /> }
     </div>
   );
 }
