@@ -40,7 +40,8 @@ h1 {
 }
 
 .modal {
-  width: 500px;
+  width: 80%;
+  max-width: 500px;
   height: 250px;
   background-color: #fff;
   border-radius: 15px;
@@ -80,7 +81,8 @@ ul {
   padding: 0;
   margin: 30px auto;
   padding-bottom: 70px;
-  width: 450px;
+  max-width: 450px;
+  width: 90%;
 }
 
 li {
@@ -137,4 +139,24 @@ form.chat {
   display: block;
   margin-top: 10px;
   font-style: italic;
+}
+
+@media all and (min-width: 630px) and (max-width: 700px) {
+  .chat input[type="text"], .chat input[type="submit"] {
+    font-size: 1.1em;
+  }
+}
+
+@media all and (max-width: 630px) {
+  .chat input[type="text"], .chat input[type="submit"] {
+    display: block;
+    margin: 15px auto;
+    width: 85%;
+  }
+
+  .chat input[type="submit"] {
+    margin-bottom: 20px;
+    padding: 15px;
+    width: 87%;
+  }
 }
