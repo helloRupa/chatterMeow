@@ -37,7 +37,7 @@ function NameForm({ setName }) {
         </form>
 
         <span className="tiny-text">
-          Not a responsive app, just a quick experiement.
+          Just a quick experiment.
         </span>
       </div>
     </div>
