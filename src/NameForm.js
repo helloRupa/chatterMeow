@@ -8,6 +8,10 @@ function NameForm({ setName }) {
       window.scrollTo(0, 0);
       document.body.style.overflow = "hidden";
     }, 50);
+
+    return () => {
+      document.body.style.overflow = "visible";
+    }
   }, []);
 
   const handleChange = (e) => setInput(e.target.value);
@@ -15,7 +19,6 @@ function NameForm({ setName }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     setName(input);
-    document.body.style.overflow = "";
   };
 
   return (
