@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 function NameForm({ setName }) {
   const [input, setInput] = useState("");
@@ -11,7 +11,7 @@ function NameForm({ setName }) {
 
     return () => {
       document.body.style.overflow = "visible";
-    }
+    };
   }, []);
 
   const handleChange = (e) => setInput(e.target.value);
@@ -27,21 +27,21 @@ function NameForm({ setName }) {
         <h1>ChatterMeow</h1>
 
         <form onSubmit={handleSubmit}>
-          <input type="text" 
-            value={input} 
-            onChange={handleChange} 
+          <input
+            type="text"
+            value={input}
+            onChange={handleChange}
             placeholder="Your name, your highness"
             minLength={1}
-            maxLength={30} />
+            maxLength={30}
+          />
           <input type="submit" value="Enter" />
         </form>
 
-        <span className="tiny-text">
-          Just a quick experiment.
-        </span>
+        <span className="tiny-text">Just a quick experiment.</span>
       </div>
     </div>
-  )
+  );
 }
 
 export default NameForm;

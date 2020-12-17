@@ -13,7 +13,7 @@ body {
   background-repeat: no-repeat;
   background-size: 225px;
   background-position: 102% 77%;
-    background-attachment: fixed;
+  background-attachment: fixed;
 }
 
 code {
@@ -146,13 +146,17 @@ form.chat {
 }
 
 @media all and (min-width: 630px) and (max-width: 700px) {
-  .chat input[type="text"], .chat input[type="submit"] {
+
+  .chat input[type="text"],
+  .chat input[type="submit"] {
     font-size: 1.1em;
   }
 }
 
 @media all and (max-width: 630px) {
-  .chat input[type="text"], .chat input[type="submit"] {
+
+  .chat input[type="text"],
+  .chat input[type="submit"] {
     display: block;
     margin: 15px auto;
     width: 85%;

@@ -1,5 +1,5 @@
-import Messages from './Messages';
-import ChatForm from './ChatForm';
+import Messages from "./Messages";
+import ChatForm from "./ChatForm";
 
 function Chat({ name, messages, socket }) {
   return (
@@ -8,7 +8,7 @@ function Chat({ name, messages, socket }) {
       <Messages messages={messages} />
       <ChatForm name={name} socket={socket} />
     </>
-  )
+  );
 }
 
 export default Chat;
