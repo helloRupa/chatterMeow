@@ -1,7 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+
+const errorMessages = [
+  "Seriously, seriously! Put your name in!",
+  "Feed me your name words.",
+  "Don't even with that business!",
+  "All it takes is just one name.",
+  "Your name is important. Tell it to me.",
+];
 
 function NameForm({ setName }) {
   const [input, setInput] = useState("");
+  const textInput = useRef();
 
   useEffect(() => {
     setTimeout(() => {
@@ -14,11 +23,23 @@ function NameForm({ setName }) {
     };
   }, []);
 
-  const handleChange = (e) => setInput(e.target.value);
+  const handleChange = (e) => {
+    textInput.current.setCustomValidity("");
+    setInput(e.target.value);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setName(input);
+
+    if (input.length > 0 && input.length < 31) {
+      setName(input);
+    } else {
+      const choice = Math.floor(Math.random() * errorMessages.length);
+      const errorMessage = errorMessages[choice];
+
+      textInput.current.setCustomValidity(errorMessage);
+      textInput.current.reportValidity();
+    }
   };
 
   return (
@@ -34,6 +55,7 @@ function NameForm({ setName }) {
             placeholder="Your name, your highness"
             minLength={1}
             maxLength={30}
+            ref={textInput}
           />
           <input type="submit" value="Enter" />
         </form>
