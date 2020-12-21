@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 function Form({
   errorMessages,
   submitFunction,
-  formClassName,
+  formClassName = "",
   placeholder,
   buttonText,
 }) {

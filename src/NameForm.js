@@ -28,7 +28,6 @@ function NameForm({ setName }) {
   const props = {
     errorMessages,
     submitFunction: handleSubmit,
-    formClassName: "",
     placeholder: "Your name, your highness",
     buttonText: "Enter",
   };
@@ -36,6 +35,7 @@ function NameForm({ setName }) {
   return (
     <div className="modal">
       <h1>ChatterMeow</h1>
+
       <Form {...props} />
 
       <span className="tiny-text">Just a quick experiment.</span>
