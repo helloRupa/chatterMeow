@@ -1,27 +1,26 @@
 import { useRef, useState } from "react";
 
-function ChatForm({ name, socket }) {
-  const [message, setMessage] = useState("");
+function Form({
+  errorMessages,
+  submitFunction,
+  formClassName,
+  placeholder,
+  buttonText,
+}) {
+  const [text, setText] = useState("");
   const textInput = useRef();
 
   const handleChange = (e) => {
     textInput.current.setCustomValidity("");
-    setMessage(e.target.value);
+    setText(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (message.length > 0 && message.length < 31) {
-      socket.emit(
-        "chat message",
-        JSON.stringify({
-          msg: message,
-          username: name,
-        })
-      );
-
-      setMessage("");
+    if (text.length > 0 && text.length < 31) {
+      submitFunction(e, text);
+      setText("");
     } else {
       const choice = Math.floor(Math.random() * errorMessages.length);
       const errorMessage = errorMessages[choice];
@@ -32,19 +31,19 @@ function ChatForm({ name, socket }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="chat">
+    <form onSubmit={handleSubmit} className={formClassName}>
       <input
         type="text"
-        value={message}
-        placeholder="Tell Me Sweet Little Meows"
+        value={text}
+        placeholder={placeholder}
         onChange={handleChange}
         maxLength={30}
         minLength={1}
         ref={textInput}
       />
-      <input type="submit" value="Send It Meow" />
+      <input type="submit" value={buttonText} />
     </form>
   );
 }
 
-export default ChatForm;
+export default Form;
