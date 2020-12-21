@@ -43,7 +43,7 @@ function App() {
   return (
     <div className="App">
       {name === "" ? <NameForm setName={setName} /> : null}
-      {isReady ? (
+      {isReady && name !== "" ? (
         <Chat name={name} socket={socket} messages={messages} />
       ) : (
         <Loading />

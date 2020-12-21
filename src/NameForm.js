@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
+import Form from "./Form";
 
 const errorMessages = [
   "Seriously, seriously! Put your name in!",
@@ -9,9 +10,6 @@ const errorMessages = [
 ];
 
 function NameForm({ setName }) {
-  const [input, setInput] = useState("");
-  const textInput = useRef();
-
   useEffect(() => {
     setTimeout(() => {
       window.scrollTo(0, 0);
@@ -23,45 +21,24 @@ function NameForm({ setName }) {
     };
   }, []);
 
-  const handleChange = (e) => {
-    textInput.current.setCustomValidity("");
-    setInput(e.target.value);
+  const handleSubmit = (e, name) => {
+    setName(name);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (input.length > 0 && input.length < 31) {
-      setName(input);
-    } else {
-      const choice = Math.floor(Math.random() * errorMessages.length);
-      const errorMessage = errorMessages[choice];
-
-      textInput.current.setCustomValidity(errorMessage);
-      textInput.current.reportValidity();
-    }
+  const props = {
+    errorMessages,
+    submitFunction: handleSubmit,
+    formClassName: "",
+    placeholder: "Your name, your highness",
+    buttonText: "Enter",
   };
 
   return (
-    <div className="modal-bg">
-      <div className="modal">
-        <h1>ChatterMeow</h1>
+    <div className="modal">
+      <h1>ChatterMeow</h1>
+      <Form {...props} />
 
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            value={input}
-            onChange={handleChange}
-            placeholder="Your name, your highness"
-            minLength={1}
-            maxLength={30}
-            ref={textInput}
-          />
-          <input type="submit" value="Enter" />
-        </form>
-
-        <span className="tiny-text">Just a quick experiment.</span>
-      </div>
+      <span className="tiny-text">Just a quick experiment.</span>
     </div>
   );
 }
