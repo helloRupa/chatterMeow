@@ -1,8 +1,13 @@
+# ChatterMeow
+A small experiment that uses web sockets and React for instant messaging. This should never be used for anything that matters.
+
+Set your name, send a message, read messages - that's it! Exciting? No, not unless someone stops by and sends something super weird.
+
+Backend is here: https://github.com/helloRupa/simple-message-emitter
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-Backend is here: https://github.com/helloRupa/simple-message-emitter
 
 ## Available Scripts
 
